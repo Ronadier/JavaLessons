@@ -5,7 +5,8 @@ import java.util.HashMap;
 
 public class Day2 {
   public static void main(String[] args) {
-    String str = "[[({})]]";
+    String str = "[[({})]";
+    System.out.println(isStringRight(str));
   }
 
   private static boolean isStringRight (String str) {
@@ -15,7 +16,16 @@ public class Day2 {
     skobochki.put('[', ']');
     skobochki.put('{', '}');
     Deque<Character> deq = new ArrayDeque<>();
-
+    for (int i = 0; i<arr.length; i++) {
+      deq.add(arr[i]);
+      if (!skobochki.containsKey(arr[i])) {
+        Character lastChar = deq.removeLast();
+        if (!(lastChar.equals(skobochki.get(deq.removeLast())))) {
+          return false;
+        }
+      }
+    }
+    return true;
   }
 
 }
