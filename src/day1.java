@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Day1 {
   public static void main(String[] args) {
-    int[] arr = new int[] {22, 4, 1, 9, 10, 7};
+    int[] arr = new int[] {1, 22, 4, 1, 9, 10, 7, 23, 100, 22};
     int n = 3;
     System.out.println(getNthFromArray(arr, n));
   }
