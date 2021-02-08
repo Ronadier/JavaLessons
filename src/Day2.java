@@ -19,8 +19,8 @@ public class Day2 {
     for (int i = 0; i<arr.length; i++) {
       deq.add(arr[i]);
       if (!skobochki.containsKey(arr[i])) {
-        Character lastChar = deq.removeLast();
-        if (!(lastChar.equals(skobochki.get(deq.removeLast())))) {
+        Character lastChar = deq.pollLast();
+        if (!(lastChar.equals(skobochki.get(deq.pollLast())))) {
           return false;
         }
       }
