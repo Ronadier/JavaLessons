@@ -6,27 +6,32 @@ import java.util.ArrayList;
 
 public class Task1 {
   public static void main(String[] args) {
-    System.out.println(getSimpleNumbers(Integer.MAX_VALUE));
+    System.out.println(getSimpleNumbers(111111));
   }
 
 private static ArrayList<Integer> getSimpleNumbers (int n) {
     ArrayList<Integer> foundedSimpleNumbers = new ArrayList<>();
+    if (n < 2) {
+        return foundedSimpleNumbers;
+    }
     long beginFunc = System.currentTimeMillis();
     nextNumber:
     for (int number = 2; number <= n; number++) {
-      for (int delitel = 2; delitel <= number/2; delitel++) {
-        if (number%delitel == 0) {
-          continue nextNumber;
-        }
+      if (isSimple(number, foundedSimpleNumbers)) {
+          foundedSimpleNumbers.add(number);
       }
-      foundedSimpleNumbers.add(number);
     }
-    System.out.println("Время выполнения функции "+(System.currentTimeMillis() - beginFunc));
+    System.out.println("Время выполнения функции "+(System.currentTimeMillis() - beginFunc) + " мс");
     return foundedSimpleNumbers;
 }
 
 private static boolean isSimple (int number, ArrayList<Integer> foundedSimpleNumbers) {
-
+    for (int foundedSimpe : foundedSimpleNumbers) {
+        if (number % foundedSimpe == 0) {
+            return false;
+        }
+    }
+    return true;
 }
 
 }
