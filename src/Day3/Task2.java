@@ -38,3 +38,4 @@ public class Task2 {
 }
 
 //цикл до n. Если число %3 == 0 -> FIZZ, %5 -> BUZZ
+//HashMap
