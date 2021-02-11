@@ -23,9 +23,10 @@ public class Task3 {
         }
       }
     }
+  }
 
-
-
+  private static boolean isArrayTrue (ArrayList<Integer> arr) {
+    
   }
 }
 
