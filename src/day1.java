@@ -12,6 +12,11 @@ public class Day1 {
       throw new IllegalArgumentException("Small array");
     }
     LinkedList<Integer> resultList = new LinkedList<>();
+    if (N == 1) {
+      OptionalInt max = Arrays.stream(arr).max();
+      resultList.add(max.getAsInt());
+      return resultList;
+    }
     for (int i = 0; i < arr.length; ++i) {
       if (i < N) {
         resultList = addElementToArray(resultList, arr[i]);
