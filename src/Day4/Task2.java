@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class Task2 {
   public static void main(String[] args) {
-    File path = new File("D:\\");
+    File path = new File("C:\\Users\\ЧлекКонстантин\\Desktop");
     readFiles(path);
   }
 
